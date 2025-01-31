@@ -83,6 +83,14 @@ function App() {
          {option1 &&
            <img src="https://fakeimg.pl/400x600?text=image+1" alt="image-1"/>
           }
+
+          {option2 &&
+           <img src="https://fakeimg.pl/300x400?text=image+2" alt="image-3"/>
+          }
+
+          {option3 &&
+           <img src="https://fakeimg.pl/300x400?text=image+3" alt="image-3"/>
+          }
         
         </div>
       }
