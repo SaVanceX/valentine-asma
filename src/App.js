@@ -78,20 +78,19 @@ function App() {
       {showCard &&
         <div class="response-card">
           <button onClick={closeModal}>Close card</button>
-          <p>{response}</p>
-          <p>image here</p>
-         {option1 &&
-           <img src="https://fakeimg.pl/400x600?text=image+1" alt="image-1"/>
-          }
-
+          <p> She said {response}</p>
+           {option1 &&
+             <img src="https://fakeimg.pl/400x600?text=image+1" alt="image-1"/>
+            }
+    
           {option2 &&
            <img src="https://fakeimg.pl/300x400?text=image+2" alt="image-3"/>
           }
-
+    
           {option3 &&
            <img src="https://fakeimg.pl/300x400?text=image+3" alt="image-3"/>
           }
-        
+      
         </div>
       }
   </div>
