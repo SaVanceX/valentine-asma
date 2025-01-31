@@ -23,7 +23,7 @@ h2 {
 }
 
 .card {
-  background-image: url('public/old-paper-img.jpg');
+  background-image: url('https://media.istockphoto.com/id/645964956/photo/old-paper-texture-background.jpg?s=612x612&w=0&k=20&c=K6mkl0xJEbxcGdU7d5Nw2g5sXPCgPbeCDMoUgqYhApo=');
   border-radius: 24px;
   display: flex;
   flex-direction: column;
