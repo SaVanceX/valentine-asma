@@ -3,7 +3,7 @@ import './App.css';
 
 function App() {
   const [showCard, setShowCard] = useState(false)
-
+  const [response, setResponse] = useState('')
   const [radioOptions, setRadioOptions] = useState({
     option1: false,
     option2: false,
@@ -18,14 +18,18 @@ function App() {
   }
 
   const handleChange = (e) => {
-    const { name } = e.target;
+    const { name, value } = e.target;
+    const
     if(name === 'option1') {
+      setResponse(value)
       setRadioOptions({option1: true, option2: false, option3: false})
     }
     if(name === 'option2') {
+      setResponse(value)
       setRadioOptions({option1: false, option2: true, option3: false})
     }
     if(name === 'option3') {
+      setResponse(value)
       setRadioOptions({option1: false, option2: false, option3: true})
     }
   }
@@ -34,9 +38,9 @@ function App() {
     console.log(e)
     e.preventDefault()
     setShowCard(true)
+    
     /**
      * trigger confetti
-     * show message
      */
   }
   return (
@@ -74,7 +78,7 @@ function App() {
       {showCard &&
         <div class="response-card">
           <button onClick={closeModal}>Close card</button>
-          <p>Card with image</p>
+          <p>{response}</p>
           <p>image here</p>
         </div>
       }
