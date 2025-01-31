@@ -19,7 +19,7 @@ function App() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    const
+    
     if(name === 'option1') {
       setResponse(value)
       setRadioOptions({option1: true, option2: false, option3: false})
