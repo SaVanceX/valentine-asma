@@ -81,7 +81,7 @@ function App() {
           <p>{response}</p>
           <p>image here</p>
          {option1 &&
-           <img src="https://fakeimg.pl/400x600?text=image+1"/>
+           <img src="https://fakeimg.pl/400x600?text=image+1" alt="image-1"/>
           }
         
         </div>
