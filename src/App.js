@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+import { FaWindowClose } from "react-icons/fa";
+
 import './App.css';
+
 
 function App() {
   const [showCard, setShowCard] = useState(false)
@@ -19,7 +22,7 @@ function App() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    
+
     if(name === 'option1') {
       setResponse(value)
       setRadioOptions({option1: true, option2: false, option3: false})
@@ -38,7 +41,7 @@ function App() {
     console.log(e)
     e.preventDefault()
     setShowCard(true)
-    
+
     /**
      * trigger confetti
      */
@@ -76,21 +79,23 @@ function App() {
       </div>
 
       {showCard &&
-        <div class="response-card">
-          <button onClick={closeModal}>Close card</button>
-          <p> She said {response}</p>
-           {option1 &&
-             <img src="https://fakeimg.pl/400x600?text=image+1" alt="image-1"/>
-            }
-    
+        <div className="response-card">
+          <button className="response-close" onClick={closeModal}>
+            <FaWindowClose />
+          </button>
+          <p className="response-text"> She said: <span>{response}</span></p>
+          {option1 &&
+            <div className='response-img-1'></div>
+          }
+
           {option2 &&
-           <img src="https://fakeimg.pl/300x400?text=image+2" alt="image-3"/>
+            <div className='response-img-2'></div>
           }
-    
+
           {option3 &&
-           <img src="https://fakeimg.pl/300x400?text=image+3" alt="image-3"/>
+            <div className='response-img-3'></div>
           }
-      
+
         </div>
       }
   </div>
