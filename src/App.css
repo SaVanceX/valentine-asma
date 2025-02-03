@@ -9,11 +9,31 @@
   background: antiquewhite;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
 }
 
-h1 {
-  margin-top: 100px;
+.typewriter h1 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation:
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: rgb(195, 0, 255); }
 }
 
 h2 {
@@ -29,23 +49,39 @@ h2 {
   flex-direction: column;
   align-items: center;
   border: 1px solid black;
-  margin-top: 200px;
+  margin-top: 100px;
   width: 100%;
   max-width: 800px;
+  opacity: 0;
+  animation: fadeIn 3s ease-in-out 3s forwards;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 
+@keyframes responseFadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
 
+.hearts-container {
+  width: 100%;
+}
 
 
 .response-card {
-  z-index: 999;
+  z-index: 500;
   position: absolute;
   top: 185px;
   padding: 32px;
   border-radius: 18px;
   display: flex;
   flex-direction: column;
+  opacity: 0;
+  animation: responseFadeIn 500ms ease-in-out 500ms forwards;
   background-color: hsla(185, 58%, 56%, 1);
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 0 0' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"), radial-gradient(circle at 68% 1%, hsla(253, 66%, 75%, 1) 7%, transparent 61%), radial-gradient(circle at 1% 48%, hsla(226, 66%, 63%, 1) 13%, transparent 54%), radial-gradient(circle at 58% 29%, hsla(359, 63%, 67%, 1) 19%, transparent 81%), radial-gradient(circle at 83% 79%, hsla(181, 88%, 59%, 1) 15%, transparent 61%), radial-gradient(circle at 85% 56%, hsla(293, 91%, 54%, 1) 0%, transparent 78%), radial-gradient(circle at 20% 43%, hsla(293, 89%, 59%, 1) 8%, transparent 55%), radial-gradient(circle at 63% 14%, hsla(197, 99%, 92%, 1) 9%, transparent 69%), radial-gradient(circle at 51% 27%, hsla(251, 96%, 90%, 1) 4%, transparent 50%), radial-gradient(circle at 26% 50%, hsla(270, 63%, 55%, 1) 20%, transparent 71%), radial-gradient(circle at 65% 83%, hsla(278, 99%, 97%, 1) 2%, transparent 90%);
   background-blend-mode: overlay, normal, normal, normal, normal, normal, normal, normal, normal, normal, normal;
